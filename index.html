@@ -1,13 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Special Ringtone</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY BIRTHDAY TRIBENI</title>
+    <style>
+        body {
+            text-align: center;
+            background: url('https://source.unsplash.com/1600x900/?birthday,cake,party') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 50px;
+            text-shadow: 3px 3px 10px rgba(255, 215, 0, 0.8);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; }
+            to { text-shadow: 0 0 20px #ff6600, 0 0 30px #ff6600, 0 0 40px #ff6600; }
+        }
+        .message {
+            font-size: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 20px;
+            color: white;
+            background: linear-gradient(45deg, #ff0080, #ffcc00);
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 10px rgba(255, 0, 128, 0.4);
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: linear-gradient(45deg, #ffcc00, #ff0080);
+            transform: scale(1.1);
+        }
+        audio {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h2>Click to Play Your Special Ringtone!</h2>
-    <audio controls autoplay>
+
+    <h1>🎉 Happy Birthday Tribeni! 🎂</h1>
+    
+    <p class="message">Wishing you a day filled with love, joy, and endless happiness! Click below to hear your special song. 🎶</p>
+    
+    <button class="button" onclick="playRingtone()">🎵 Play Ringtone</button>
+    
+    <audio id="birthdaySong">
         <source src="Happy Birthday To Yo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    
+    <script>
+        function playRingtone() {
+            var audio = document.getElementById("birthdaySong");
+            audio.play();
+        }
+    </script>
+
 </body>
 </html>
